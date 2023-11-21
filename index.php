@@ -34,12 +34,9 @@
   <link href="css/style.css" rel="stylesheet" />
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
-  <?php require "navigation.php" ?> 
-  <?php require "treatment.php" ?>
-  <?php require "contact.php" ?>
-  <?php require "testimonial.php" ?>
+  <?php require "variables.php" ?>
 
-
+  
 
 </head>
 
@@ -87,7 +84,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <div class="d-flex mr-auto flex-column flex-lg-row align-items-center">
                 <ul class="navbar-nav  ">
-
+                  
 
                   <?php
                     foreach ($categories as $category ) { 
@@ -252,7 +249,7 @@
     <div class="container">
       <div class="row">
         <div class="col">
-          <form action = "./post.php ">
+          <form action = "welcome.php" method = "post" target = "_blank">
             <h4>
               BOOK <span>APPOINTMENT</span>
             </h4>
@@ -356,27 +353,28 @@
       </div>
       <div class="row">
         <?php
-          foreach ($treatments as $treatment ) {
-            echo '<div class="col-md-6 col-lg-3">
-            <div class="box ">
-              <div class="img-box">
-                <img src="' .$treatment['icon'] . '" alt="">
-              </div>
-              <div class="detail-box">
-                <h4>
-                  ' .$treatment['title'] . '
-                </h4>
-                <p>
-                  ' .$treatment['description'] . '
-                </p>
-                <a href="">
-                  ' .$treatment['link'] . '
-                </a>
-              </div>
-            </div>
-          </div>';
-          }
 
+              for ($i=0; $i<sizeof($treatments); $i++) {
+                echo ' <div class="col-md-6 col-lg-3">
+                <div class="box ">
+                  <div class="img-box">
+                    <img src="' .$treatments[$i]['icon'] . '" alt="">
+                  </div>
+                  <div class="detail-box">
+                    <h4>
+                      ' .$treatments[$i]['title'] . '
+                    </h4>
+                    <p>
+                      ' .$treatments[$i][
+                     'description' ] . '
+                    </p>
+                    <a href="">
+                      ' .$treatments[$i]['link'] . '
+                    </a>
+                  </div>
+                </div>
+              </div>';
+              }        
         ?>
         
       </div>
@@ -398,42 +396,91 @@
         <div class="owl-carousel team_carousel">
           <div class="item">
             <div class="box">
-              <?php
-                foreach ($contacts as $contact ) { 
-                  echo '  
-                  <div class="img-box">
-                    <img src="' .$contact['iconOfContact'] . '" alt="" />
-                  </div>
-                  <div class="detail-box">
-                    <h5>
-                      ' .$contact['titleOfDoctor'] . '
-                    </h5>
-                    <h6>
-                      ' .$contact['subtitleOfContact'] . '
-                    </h6>
-                    <div class="social_box">
-                      <a href="">
-                        <i class="fa fa-facebook" aria-hidden="true"></i>
-                      </a>
-                      <a href="">
-                        <i class="fa fa-twitter" aria-hidden="true"></i>
-                      </a>
-                      <a href="">
-                        <i class="fa fa-linkedin" aria-hidden="true"></i>
-                      </a>
-                      <a href="">
-                        <i class="fa fa-instagram" aria-hidden="true"></i>
-                      </a>
-                    </div>
-                  </div>';
-                
-               }
-
-
-              ?>
-            </div>   
+              <div class="img-box">
+                <img src="images/team1.jpg" alt="" />
+              </div>
+              <div class="detail-box">
+                <h5>
+                  Hennry
+                </h5>
+                <h6>
+                  MBBS
+                </h6>
+                <div class="social_box">
+                  <a href="">
+                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                  </a>
+                  <a href="">
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                  </a>
+                  <a href="">
+                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                  </a>
+                  <a href="">
+                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
-        
+          <div class="item">
+            <div class="box">
+              <div class="img-box">
+                <img src="images/team2.jpg" alt="" />
+              </div>
+              <div class="detail-box">
+                <h5>
+                  Jenni
+                </h5>
+                <h6>
+                  MBBS
+                </h6>
+                <div class="social_box">
+                  <a href="">
+                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                  </a>
+                  <a href="">
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                  </a>
+                  <a href="">
+                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                  </a>
+                  <a href="">
+                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="box">
+              <div class="img-box">
+                <img src="images/team3.jpg" alt="" />
+              </div>
+              <div class="detail-box">
+                <h5>
+                  Morco
+                </h5>
+                <h6>
+                  MBBS
+                </h6>
+                <div class="social_box">
+                  <a href="">
+                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                  </a>
+                  <a href="">
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                  </a>
+                  <a href="">
+                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                  </a>
+                  <a href="">
+                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -454,30 +501,33 @@
     <div class="container px-0">
       <div id="customCarousel2" class="carousel  carousel-fade" data-ride="carousel">
         <div class="carousel-inner">
-          <?php 
+          <?php
+            function generateTestimonial($testimonial ) {
               foreach ($testimonials as $testimonial ) {
-                echo ' <div class="carousel-item active">
-                <div class="box">
-                  <div class="client_info">
-                    <div class="client_name">
-                      <h5>
-                        ' .$testimonial['titleOfTestimonial'] . '
-                      </h5>
-                      <h6>
-                        ' .$testimonial['subtitleOfTestimonial'] . '
-                      </h6>
+                  
+      
+                  echo '<div class="carousel-item active  ">
+                  <div class="box">
+                    <div class="client_info">
+                      <div class="client_name">
+                        <h5>
+                          ' .$testimonial['name'] . '
+                        </h5>
+                        <h6>
+                          ' .$testimonial['designation'] . '
+                        </h6>
+                      </div>
+                      <i class="fa fa-quote-left" aria-hidden="true"></i>
                     </div>
-                    <i class="fa fa-quote-left" aria-hidden="true"></i>
+                    <p>
+                      ' .$testimonial['content'] . '
+                    </p>
                   </div>
-                  <p>
-                       ' .$testimonial['descriptionOfTestimonial'] . '
-                  </p>
-                </div>
-              </div> ';
-              
+                </div>' ;
               }
+              return $testimonial;
+            }
           ?>
-          
         </div>
         <div class="carousel_btn-box">
           <a class="carousel-control-prev" href="#customCarousel2" role="button" data-slide="prev">
@@ -505,7 +555,7 @@
       <div class="row">
         <div class="col-md-7">
           <div class="form_container">
-            <form action="./Get.php">
+            <form action="Get.php" method = "post" target = "blank">
               <div>
                 <input type="text" placeholder="Full Name" />
               </div>
