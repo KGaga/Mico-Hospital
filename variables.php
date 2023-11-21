@@ -83,6 +83,46 @@ $categories = [
         ],
     ];
     
-    
+    $contacts = [
+        [
+            'image' => 'images/team1.jpg',
+            'Name' => 'Hennry',
+            'Company' => 'MBBS',
+            
+        ],
+        [
+            'image' => 'images/team2.jpg',
+            'Name' => 'Jenni',
+            'Company' => 'MBBS',
+        ],
+        [
+            'image' => 'images/team3.jpg',
+            'Name' => 'Morco',
+            'Company' => 'MBBS',
+        ],
+    ];
+
+    $micoHospitals = [
+        [
+            'Title'=>'Mico',
+            'subTitle' => 'Hospital',
+            'Description'=> 'when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to',
+            'Link'=> 'Contact Us',
+        ],
+        [
+            'Title'=>'Mico',
+            'subTitle' => 'Hospital',
+            'Description'=> 'when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to',
+            'Link'=> 'Contact Us',
+        ],
+        [
+            'Title'=>'Mico',
+            'subTitle' => 'Hospital',
+            'Description'=> 'when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to',
+            'Link'=> 'Contact Us',
+        ],
+    ];
+ 
+   
 
 
