@@ -502,11 +502,11 @@
       <div id="customCarousel2" class="carousel  carousel-fade" data-ride="carousel">
         <div class="carousel-inner">
           <?php
-            function generateTestimonial($testimonial ) {
-              foreach ($testimonials as $testimonial ) {
-                  
+            // function generateTestimonial($testimonials ) {
+              foreach ($testimonials as $index => $testimonial ) {
+                //  $activeClass = ($index === 0) ? 'active' :  '';
       
-                  echo '<div class="carousel-item active  ">
+                  echo '<div class="carousel-item active">
                   <div class="box">
                     <div class="client_info">
                       <div class="client_name">
@@ -525,8 +525,8 @@
                   </div>
                 </div>' ;
               }
-              return $testimonial;
-            }
+              
+            // }
           ?>
         </div>
         <div class="carousel_btn-box">
